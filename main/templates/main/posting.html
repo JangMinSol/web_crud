@@ -3,9 +3,10 @@
         <title>Posting!</title>
     </head>
     <body style="margin:30px;">
-<!--        <h1 id="title">게시글 개별 페이지입니다</h1>-->
         <div>
             <h2>{{post.postname}}</h2>
+        </div>
+        <div style="border-top: 1px solid #848484; margin: 20px 0px;">
         </div>
         <p>{{post.contents}}</p>
            <!-- 이미지 보여주기 -->
@@ -13,8 +14,10 @@
             <img src = "{{ post.mainphoto.url }}" width="100" height="100">
             <br>
         {% endif %}
-        <button onclick="location.href='/blog/{{post.pk}}/remove'" class="del_post">삭제하기</button>
-        <button onclick="location.href='/blog/'" class="go_list">목록가기</button>
+        <div style="display: flex; justify-content: flex-end">
+            <button onclick="location.href='/blog/{{post.pk}}/remove'" class="del_post">삭제하기</button>
+            <button onclick="location.href='/blog/'" class="go_list">목록가기</button>
+        </div>
     </body>
     <style>
         .del_post {

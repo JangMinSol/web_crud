@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <title>글쓰기 페이지</title>
 </head>
-<body>
-    <h1>글쓰기 페이지</h1>
+<body style="margin:30px;">
+    <div style="display: flex; justify-content: space-between;">
+        <p style="font-size:45px; font-weight: bold;">새 글 쓰기</p>
+        <div style="display: flex;  justify-content: space-between; align-items: flex-end;">
+            <button onclick="location.href='/blog/'" style="width: 100px; height: 50px; color: black; background-color: white; font-size:17px;
+                                                            margin: 20px 5px 0 0; border-radius: 20px; border: 3px solid black; font-weight: bold;">목록으로</button>
+            <input type="submit" value="업로드" style="width:150px; height:50px; font-size:17px; color: white; background-color: #02A9DB; border: none; border-radius: 20px;">
+
+        </div>
+    </div>
     <form method="POST">
         {% csrf_token %}
-        제목<br>
-        <input type="text" name="postname"><br>
-        내용<br>
-        <textarea rows="10" cols="100" name="contents"></textarea><br>
+        <div style="display: flex; margin: 20px 0 20px 0;">
+            <div style="font-weight: bold; margin-right: 10px; font-size:25px">제목</div>
+            <input type="text" name="postname" style="background-color: #8b8b8b1c;
+                                                                  resize: none;
+                                                                  color: black;
+                                                                  border: none;
+                                                                  border-bottom: 2px solid #0000007e;
+                                                                  outline: none;">
+        </div>
+        <div style="display: flex; margin: 20px 0 20px 0;">
+            <div style="font-weight: bold; margin-right: 10px; font-size:25px">내용</div>
+            <textarea rows="10" cols="100" name="contents" style="background-color: #8b8b8b1c;
+                                                                  resize: none;
+                                                                  color: black;
+                                                                  border: none;
+                                                                  border-bottom: 2px solid #0000007e;
+                                                                  outline: none;"></textarea>
+        </div>
         <input type="file" name="mainphoto"><br>
-        <input type="submit" value="글쓰기">
     </form>
-    <a href="/blog/">목록</a>
 </body>
 </html>
