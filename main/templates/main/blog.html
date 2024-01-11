@@ -3,7 +3,7 @@
         <title>Blog List</title>
     </head>
     <body>
-        <div style="margin:30px;">
+        <div style="margin:50px;">
             <div style="text-align: center">
                 <h1>❤️ 자유 게시판 ❤️</h1>
             </div>
@@ -18,7 +18,7 @@
             <!-- {와 %로 이루어진 구문 내부엔 파이썬이 사용됩니다 -->
             <div style="margin-top: 20px;">
                 <table>
-                    <h2>{{post.postname}}</h2>
+<!--                    <h2>{{post.postname}}</h2>-->
                     {% for list in postlist %}
                     <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
                     <div onclick="changeHref('{{ list.pk }}')" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border-radius: 5px;  margin-top: 30px; height:70px; overflow: hidden;">

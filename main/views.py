@@ -1,3 +1,4 @@
+from django.core.mail.backends import console
 from django.shortcuts import render, redirect
 # View에 Model(Post 게시글) 가져옴
 from .models import Post
@@ -22,6 +23,8 @@ def posting(request, pk):
 
 def new_post(request):
     if request.method == 'POST':
+        if request.POST['postname'] == '' or request.POST['contents'] == '':
+            return render(request, 'main/new_post.html')
         if request.POST['mainphoto']:
             new_article=Post.objects.create(
                 postname=request.POST['postname'],
