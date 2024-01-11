@@ -3,17 +3,32 @@
         <title>Blog List</title>
     </head>
     <body>
-        <h1>게시판 페이지입니다</h1>
-        <button><a href="new_post/">글쓰기</a></button>
-        <!-- 게시판(postlist)의 게시글(list)을 하나씩 보여줍니다 -->
-        <!-- {와 %로 이루어진 구문 내부엔 파이썬이 사용됩니다 -->
-        <table>
-        {% for list in postlist %}
-            <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
-            <ul>
-                <li><a href="{{list.pk}}">{{list.postname}}</a></li>
-            </ul>
-        {% endfor %}
-        </table>
+        <div style="margin:30px;">
+            <h1>게시판 페이지</h1>
+            <div style="margin-bottom: 20px;">
+                <button onclick="location.href='new_post/'" style="width: 100px;
+                    height: 50px; color: black; background-color: white;  border-radius: 15px; border: 3px solid black; font-weight:25">글쓰기</button>
+            </div>
+            <!-- 게시판(postlist)의 게시글(list)을 하나씩 보여줍니다 -->
+            <!-- {와 %로 이루어진 구문 내부엔 파이썬이 사용됩니다 -->
+            <div style="margin-top: 20px;">
+                <table>
+                    <h2>{{post.postname}}</h2>
+                    {% for list in postlist %}
+                    <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
+                    <div onclick="changeHref('{{ list.pk }}')" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin-top: 30px; height:60px;">
+                        <a style="font-size:25px; font-weight: bold;">{{list.postname}}</a><br>
+                        <a style="font-size:20px;">{{list.contents}}</a>
+                    {% endfor %}
+                    </div>
+                </table>
+            </div>
+        </div>
+
+    <script>
+        function changeHref(pk) {
+            window.location.href = '../blog/' + pk;
+        }
+    </script>
     </body>
 </html>
