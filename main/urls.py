@@ -3,7 +3,7 @@ from django.urls import path
 # index는 대문, blog는 게시판
 from main.views import index, blog, posting, new_post, remove_post
 
-# 이미지를 업로드하자
+# 이미지 업로드
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -20,4 +20,3 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

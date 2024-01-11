@@ -4,10 +4,13 @@
     </head>
     <body>
         <div style="margin:30px;">
-            <h1>게시판 페이지</h1>
-            <div style="margin-bottom: 20px;">
+            <div style="">
+                <h1>❤️ 자유 게시판 ❤️</h1>
+            </div>
+            <div style="margin-bottom: 20px; text-align: right;">
                 <button onclick="location.href='new_post/'" style="width: 100px;
-                    height: 50px; color: black; background-color: white;  border-radius: 15px; border: 3px solid black; font-weight:25">글쓰기</button>
+                                 height: 50px; color: black; background-color: white; font-size:17px;
+                                 border-radius: 20px; border: 3px solid black; font-weight: bold; ">글쓰기</button>
             </div>
             <!-- 게시판(postlist)의 게시글(list)을 하나씩 보여줍니다 -->
             <!-- {와 %로 이루어진 구문 내부엔 파이썬이 사용됩니다 -->
@@ -16,11 +19,12 @@
                     <h2>{{post.postname}}</h2>
                     {% for list in postlist %}
                     <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
-                    <div onclick="changeHref('{{ list.pk }}')" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); margin-top: 30px; height:60px;">
-                        <a style="font-size:30px; font-weight: bold;">{{list.postname}}</a><br>
-                        <a style="font-size:20px;">{{list.contents}}</a>
-                    {% endfor %}
+                    <div onclick="changeHref('{{ list.pk }}')" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border-radius: 5px;  margin-top: 30px; height:70px; overflow: hidden;">
+                        <a style="padding: 10px; font-size:30px; font-weight: bold;">{{list.postname}}</a>
+                        <br>
+                        <a style="padding: 13px; font-size: 20px;">{{list.contents}}</a>
                     </div>
+                    {% endfor %}
                 </table>
             </div>
         </div>
