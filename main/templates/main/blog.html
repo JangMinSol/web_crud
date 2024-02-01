@@ -10,7 +10,7 @@
             <div style="border-top: 1px solid #848484; margin: 10px 0 20px 0;">
             </div>
             <div style="margin-bottom: 20px; text-align: right;">
-                <button onclick="location.href='new_post/'" style="width: 100px;
+                <button class="write_post" onclick="location.href='new_post/'" style="width: 100px;
                                  height: 50px; color: black; background-color: white; font-size:17px;
                                  border-radius: 20px; border: 3px solid black; font-weight: bold; ">글쓰기</button>
             </div>
@@ -30,11 +30,25 @@
                 </table>
             </div>
         </div>
-
     <script>
         function changeHref(pk) {
             window.location.href = '../blog/' + pk;
         }
     </script>
     </body>
+    <style>
+        .write_post{
+            width: 100px;
+            height: 50px;
+            color: black;
+            background-color: white;
+            font-size:17px;
+            border-radius: 20px;
+            border: 3px solid black;
+            font-weight: bold;
+        }
+        .write_post:hover{
+            box-shadow: 0 0 15px black;
+        }
+    </style>
 </html>
